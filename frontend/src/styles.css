@@ -2645,3 +2645,30 @@ input, select, textarea {
 .suggestion:hover { background-color: #351416; }
 .project-progress-track { background-color: #303030; }
 .project-progress-fill { background-color: var(--team-red); }
+
+
+/* REQUESTED RED PAGE BACKGROUND — keep cards readable and mobile-safe. */
+:root { --team-page-red: #2b080b; }
+html, body, #root, .app-shell, .main-area, .content {
+  background-color: var(--team-page-red) !important;
+}
+.app-shell, .main-area {
+  background-image: linear-gradient(135deg, #3a0b10 0%, #260609 52%, #1b0508 100%) !important;
+}
+.sidebar, .topbar {
+  background-color: #160608 !important;
+  border-color: #592027 !important;
+}
+.auth-wrap {
+  background: radial-gradient(ellipse at 50% 0%, #70151f 0%, #35090e 48%, #1b0508 100%) !important;
+}
+.stat-card, .panel, .project-card, .auth-card,
+.task-edit-card, .member-card, .settings-card {
+  background-color: #19090c !important;
+  border-color: #64232b !important;
+}
+@media (max-width: 650px) {
+  html, body, #root, .app-shell, .main-area, .content {
+    background-color: #2b080b !important;
+  }
+}
