@@ -22,6 +22,7 @@ import {
   CirclePlus
 } from 'lucide-react';
 import api from './api';
+import GuestDemo from './GuestDemo';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
@@ -35,7 +36,7 @@ const initialAuth = {
   password: ''
 };
 
-function Auth({ onAuth }) {
+function Auth({ onAuth, onGuest }) {
   const [mode, setMode] = useState('login');
   const [form, setForm] = useState(initialAuth);
   const [error, setError] = useState('');
@@ -112,6 +113,12 @@ function Auth({ onAuth }) {
           </button>
         </form>
 
+        {mode === 'login' && (
+          <button className="secondary full guest-entry" type="button" onClick={onGuest}>
+            Explore demo — no password
+          </button>
+        )}
+
         <p className="switch">
           {mode === 'login'
             ? 'New to TeamOS? '
@@ -134,6 +141,7 @@ function Auth({ onAuth }) {
 
 export default function App() {
   const [user, setUser] = useState(null);
+  const [guestMode, setGuestMode] = useState(false);
   const [projects, setProjects] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [members, setMembers] = useState([]);
@@ -510,8 +518,10 @@ export default function App() {
     }
   };
 
+  if (guestMode) return <GuestDemo onExit={() => setGuestMode(false)} />;
+
   if (!user) {
-    return <Auth onAuth={setUser} />;
+    return <Auth onAuth={setUser} onGuest={() => setGuestMode(true)} />;
   }
 
   return (
