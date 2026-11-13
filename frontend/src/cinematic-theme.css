@@ -1,0 +1,142 @@
+/* Cinematic portfolio-inspired visual refresh — presentation only */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  --cinema-bg: #080808;
+  --cinema-panel: #111111;
+  --cinema-line: #303030;
+  --cinema-red: #e32636;
+  --cinema-muted: #a1a1a1;
+}
+html, body, #root { min-height: 100%; background: var(--cinema-bg); }
+body { color: #f5f5f5; font-family: 'DM Sans', sans-serif; }
+.app-shell, .main-area, .content { background: var(--cinema-bg); }
+.sidebar {
+  background: #0b0b0b;
+  border-right: 1px solid var(--cinema-line);
+}
+.brand, .topbar h1, .welcome-row h2, .auth-card h1 {
+  letter-spacing: -.035em;
+}
+.brand-mark {
+  background: var(--cinema-red);
+  border-radius: 3px;
+  box-shadow: 0 0 28px #e3263638;
+}
+.brand sup, .accent, .stat-icon { color: var(--cinema-red); }
+.sidebar nav button {
+  border-radius: 3px;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.sidebar nav button:hover, .sidebar nav button.active {
+  color: #fff;
+  background: #241012;
+  box-shadow: inset 3px 0 var(--cinema-red);
+}
+.nav-badge, .count {
+  background: #281013;
+  color: #ff6875;
+  border-radius: 3px;
+}
+.topbar {
+  background: #090909;
+  border-color: var(--cinema-line);
+}
+.content { max-width: 1500px; }
+.eyebrow, .nav-label { color: #e15b65; letter-spacing: .18em; }
+.stat-card, .panel, .project-card, .task-edit-card, .task-filters {
+  background: linear-gradient(145deg, #151515, #0e0e0e);
+  border: 1px solid var(--cinema-line);
+  border-radius: 5px;
+  box-shadow: 0 12px 34px #0006;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.stat-card:hover, .project-card:hover {
+  border-color: #8e252d;
+  transform: translateY(-3px);
+}
+.stat-card h2 {
+  font-family: 'Anton', 'DM Sans', sans-serif;
+  font-size: 38px;
+  letter-spacing: .02em;
+}
+.panel h2, .project-card h3 { color: #fff; }
+.primary {
+  background: var(--cinema-red);
+  border: 1px solid var(--cinema-red);
+  border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.primary:hover {
+  background: #ff3547;
+  box-shadow: 0 7px 24px #e3263638;
+  transform: translateY(-1px);
+}
+.secondary {
+  background: #171717;
+  border-color: #444;
+  border-radius: 3px;
+}
+.text-btn, .link { color: #ff6572; }
+.panel input, .panel select, .panel textarea, .auth-card input,
+.search-box, .task-row select {
+  background: #090909;
+  border-color: #3a3a3a;
+  border-radius: 3px;
+}
+.panel input:focus, .panel select:focus, .panel textarea:focus,
+.auth-card input:focus {
+  border-color: var(--cinema-red);
+  box-shadow: 0 0 0 2px #e3263625;
+}
+.project-icon, .avatar, .top-avatar, .ai-avatar, .message-avatar {
+  background: #2a1114;
+  color: #ff6572;
+  border-radius: 4px;
+}
+.project-progress-track { background: #333; border-radius: 2px; }
+.project-progress-fill { background: var(--cinema-red); border-radius: 2px; }
+.priority.high { color: #ff6572; }
+.priority.medium { color: #e6bd70; }
+.priority.low { color: #91c8a7; }
+.chat-message .message-content, .generated-task {
+  background: #151515;
+  border-color: #383838;
+  border-radius: 4px;
+}
+.message-content b { color: #ff6572; }
+.user-message .message-content {
+  background: #281013;
+  border-color: #713039;
+}
+.suggestion {
+  background: #171717;
+  border-color: #623039;
+  color: #ff8791;
+  border-radius: 3px;
+}
+.auth-wrap {
+  background: radial-gradient(ellipse at 50% 0%, #3a1015 0%, #0a0a0a 58%);
+}
+.auth-card {
+  background: #101010;
+  border: 1px solid #4a2529;
+  border-radius: 5px;
+  box-shadow: 0 25px 90px #000b;
+}
+.notice {
+  background: #211012;
+  color: #ff9aa3;
+  border-color: #713039;
+  border-radius: 3px;
+}
+@media (max-width: 650px) {
+  .stat-card h2 { font-size: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
