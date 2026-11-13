@@ -2250,3 +2250,17 @@ a { color:var(--tm-red); }
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important; }
 }
+
+
+/* Public guest demo */
+.guest-shell .guest-banner { margin-bottom: 22px; }
+.guest-project-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:18px; }
+.guest-project { border:1px solid var(--border, #e8e8e8); border-radius:16px; padding:20px; background:var(--surface, #fff); }
+.guest-project h3 { margin:12px 0; }
+.guest-person .avatar { margin-bottom:12px; }
+.guest-task { gap:16px; }
+.guest-status { text-transform:capitalize; font-size:12px; color:#666; }
+.guest-ai { max-width:760px; }
+.guest-notice { display:flex; align-items:center; gap:10px; margin:22px 0 8px; padding:14px 16px; border:1px solid #e7e7e7; border-radius:12px; color:#666; font-size:13px; background:#fff; }
+.guest-entry { width:100%; margin-top:14px; }
+@media (max-width:700px) { .guest-project-grid { grid-template-columns:1fr; } .guest-task { align-items:flex-start; flex-wrap:wrap; } }
