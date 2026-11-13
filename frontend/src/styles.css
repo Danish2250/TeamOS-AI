@@ -2250,3 +2250,167 @@ a { color:var(--tm-red); }
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important; }
 }
+
+
+/* =========================================================
+   TEAMOS AI — FINTECH / DEFI-INSPIRED VISUAL POLISH
+   CSS only: no application logic, data, or interactions changed.
+   ========================================================= */
+:root {
+  --tm-red: #ff3b45;
+  --tm-red-dark: #df2632;
+  --tm-canvas: #f3f5f8;
+  --tm-paper: #ffffff;
+  --tm-ink: #111827;
+  --tm-muted: #778092;
+  --tm-line: #e6e9ef;
+  --tm-radius: 20px;
+  --tm-shadow: 0 16px 42px rgba(20, 30, 50, .065);
+}
+body, .app-shell, .main-area { background: var(--tm-canvas) !important; }
+.sidebar {
+  width: 254px;
+  padding: 28px 18px;
+  background: #fff !important;
+  border-right: 1px solid var(--tm-line) !important;
+}
+.brand { letter-spacing: -.055em; font-size: 23px; }
+.brand-mark {
+  border-radius: 14px !important;
+  background: linear-gradient(145deg, #ff5961, #e92231) !important;
+  box-shadow: 0 8px 18px rgba(255, 59, 69, .2) !important;
+}
+.sidebar nav button {
+  min-height: 44px;
+  padding: 12px 14px;
+  border-radius: 12px !important;
+  font-weight: 600;
+}
+.sidebar nav button.active {
+  color: var(--tm-red) !important;
+  background: #fff0f1 !important;
+  border: 1px solid #ffdadd !important;
+}
+.topbar {
+  height: 82px;
+  padding-inline: clamp(18px, 3vw, 42px);
+  background: rgba(255,255,255,.88) !important;
+  border-bottom: 1px solid var(--tm-line) !important;
+  backdrop-filter: blur(18px);
+}
+.topbar h1 { font-size: 25px; letter-spacing: -.05em; }
+.content {
+  max-width: 1500px;
+  padding: clamp(22px, 3vw, 42px);
+}
+.welcome-row { margin-bottom: 28px; }
+.welcome-row h2, .content h1, .content h2 {
+  letter-spacing: -.055em;
+}
+.stats-grid { gap: 16px; }
+.stat-card, .panel, .project-card, .auth-card,
+.task-edit-card, .member-card, .settings-card {
+  border: 1px solid var(--tm-line) !important;
+  border-radius: var(--tm-radius) !important;
+  background: #fff !important;
+  box-shadow: var(--tm-shadow) !important;
+}
+.stat-card { padding: 22px; position: relative; overflow: hidden; }
+.stat-card::after {
+  content: "";
+  position: absolute;
+  width: 94px; height: 94px;
+  right: -35px; top: -40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,59,69,.11), transparent 70%);
+  pointer-events: none;
+}
+.stat-card h2 { font-size: 32px; letter-spacing: -.06em; }
+.panel { padding: 24px; }
+.panel-head { margin-bottom: 20px; }
+.project-card {
+  padding: 20px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 44px rgba(20,30,50,.10) !important;
+}
+.project-icon {
+  border-radius: 12px;
+  background: #fff0f1 !important;
+  color: var(--tm-red) !important;
+}
+.primary, button.primary, .hero-primary, button[type="submit"] {
+  min-height: 42px;
+  padding: 11px 17px;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #ff5961, #ed2935) !important;
+  border: 1px solid #f13b45 !important;
+  box-shadow: 0 7px 16px rgba(255,59,69,.18) !important;
+}
+.primary:hover, button.primary:hover, .hero-primary:hover,
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(255,59,69,.25) !important;
+}
+.secondary, button.secondary, .icon-btn, button.icon-btn,
+.suggestion, .text-btn:not(.danger) {
+  border-radius: 11px !important;
+  background: #fff !important;
+  border: 1px solid var(--tm-line) !important;
+  color: #344054 !important;
+  box-shadow: none !important;
+}
+.panel input, .panel select, .panel textarea, .auth-card input,
+input, select, textarea {
+  border-radius: 11px !important;
+  border-color: #dfe4ec !important;
+  background: #fbfcfe !important;
+}
+.panel input:focus, .panel select:focus, .panel textarea:focus,
+.auth-card input:focus, input:focus, select:focus, textarea:focus {
+  border-color: var(--tm-red) !important;
+  box-shadow: 0 0 0 4px rgba(255,59,69,.09) !important;
+}
+.task-row {
+  padding: 15px 12px;
+  border-bottom: 1px solid #edf0f4 !important;
+  border-radius: 12px;
+}
+.task-row:hover { background: #fafbfc; }
+.count, .nav-badge {
+  color: var(--tm-red) !important;
+  background: #fff0f1 !important;
+  border: 1px solid #ffe0e2;
+  border-radius: 999px !important;
+}
+.notice {
+  background: #fff7f7 !important;
+  color: #a9222c !important;
+  border: 1px solid #ffdadd !important;
+  border-radius: 14px !important;
+}
+.auth-wrap {
+  background:
+    radial-gradient(ellipse at 12% 8%, rgba(255,59,69,.09), transparent 32%),
+    radial-gradient(ellipse at 90% 90%, rgba(90,115,160,.08), transparent 30%),
+    #f3f5f8 !important;
+}
+.auth-card { border-radius: 24px !important; }
+.chat-panel, .generator-panel { border-radius: 20px !important; }
+.message-content { border-radius: 15px !important; }
+@media (max-width: 900px) {
+  .sidebar { width: 205px; }
+  .content { padding: 22px; }
+}
+@media (max-width: 650px) {
+  .sidebar { width: 65px; padding: 18px 8px; }
+  .topbar { height: 68px; }
+  .content { padding: 16px 12px; }
+  .panel { padding: 17px; }
+  .stat-card { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-card, button { transition: none !important; }
+}
