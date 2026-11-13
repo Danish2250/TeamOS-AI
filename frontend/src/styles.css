@@ -2281,3 +2281,72 @@ select:focus-visible {
     outline:none;
   }
 }
+
+
+/* MOBILE CONTENT PARITY — keep the same workspace information visible as desktop */
+@media (max-width: 650px) {
+  .workspace-switcher {
+    display: flex !important;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin: 2px 0 10px;
+    padding: 9px 10px;
+    border-radius: 10px;
+  }
+
+  .workspace-switcher > div {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .workspace-switcher small,
+  .workspace-switcher b {
+    display: block !important;
+  }
+
+  .nav-label {
+    display: block !important;
+    margin: 2px 3px 6px !important;
+  }
+
+  .sidebar-bottom {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 9px;
+  }
+
+  .user-card {
+    display: flex !important;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+    padding: 7px 0;
+    border-top: 0 !important;
+    justify-content: flex-start;
+  }
+
+  .user-card > div:nth-child(2) {
+    display: block !important;
+    min-width: 0;
+  }
+
+  .user-card b,
+  .user-card small {
+    display: block !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sidebar-bottom .logout {
+    display: inline-flex !important;
+    flex: 0 0 auto;
+    width: auto;
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+}
