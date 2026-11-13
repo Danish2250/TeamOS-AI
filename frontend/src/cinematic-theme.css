@@ -140,3 +140,88 @@ body { color: #f5f5f5; font-family: 'DM Sans', sans-serif; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* ORIGINAL 3D WORKSPACE LAYER — CSS-only depth, no generated imagery or UI logic */
+:root {
+  --space-shadow: 0 28px 70px rgba(0,0,0,.62), 0 5px 18px rgba(0,0,0,.38);
+  --space-red-glow: 0 0 34px rgba(227,38,54,.18);
+}
+.app-shell { perspective: 1600px; perspective-origin: 50% 0%; }
+.main-area { transform-style: preserve-3d; }
+.content { position: relative; isolation: isolate; }
+.content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: min(48vw, 620px);
+  height: min(48vw, 620px);
+  top: 1%; right: -13%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227,38,54,.13), rgba(227,38,54,.035) 38%, transparent 70%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+.stat-card, .panel, .project-card, .task-edit-card, .task-filters {
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow: var(--space-shadow);
+  transition: transform .38s cubic-bezier(.2,.75,.25,1), box-shadow .38s ease, border-color .3s ease;
+  will-change: transform;
+}
+.stat-card::before, .project-card::before, .panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255,255,255,.075), transparent 26%, transparent 72%, rgba(227,38,54,.055));
+  opacity: .7;
+}
+.stat-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 12% -9px 12%;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.85);
+  filter: blur(12px);
+  transform: translateZ(-28px);
+  pointer-events: none;
+}
+.stat-card:hover, .project-card:hover {
+  transform: translateY(-9px) rotateX(3deg) rotateY(-2deg) translateZ(12px);
+  border-color: rgba(227,38,54,.72);
+  box-shadow: 0 38px 90px rgba(0,0,0,.72), var(--space-red-glow);
+}
+.panel:hover {
+  transform: translateY(-3px) translateZ(5px);
+  border-color: #484040;
+  box-shadow: 0 34px 80px rgba(0,0,0,.68);
+}
+.stat-card h2, .project-icon { transform: translateZ(24px); }
+.stat-card .stat-top, .project-card h3, .project-card p { transform: translateZ(14px); }
+.project-icon {
+  box-shadow: 0 9px 0 #5d1119, 0 16px 25px rgba(0,0,0,.45);
+}
+.primary {
+  box-shadow: 0 5px 0 #76131b, 0 12px 24px rgba(227,38,54,.2);
+  transform: translateZ(4px);
+}
+.primary:hover {
+  transform: translateY(-3px) translateZ(8px);
+  box-shadow: 0 8px 0 #76131b, 0 18px 30px rgba(227,38,54,.28);
+}
+.sidebar { box-shadow: 14px 0 40px rgba(0,0,0,.32); }
+.topbar { box-shadow: 0 10px 35px rgba(0,0,0,.22); }
+.task-row { transition: background .25s ease, transform .25s ease; }
+.task-row:hover { transform: translateX(4px); background: #151010; }
+.auth-card { box-shadow: 0 45px 110px rgba(0,0,0,.75), 0 0 0 1px rgba(227,38,54,.12); }
+@media (max-width: 650px) {
+  .stat-card:hover, .project-card:hover, .panel:hover { transform: translateY(-2px); }
+  .content::before { width: 90vw; height: 90vw; right: -35%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stat-card, .panel, .project-card, .task-edit-card, .task-filters, .task-row, .primary {
+    transform: none !important; transition: none !important; will-change: auto;
+  }
+}
