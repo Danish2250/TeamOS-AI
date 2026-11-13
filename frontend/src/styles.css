@@ -2252,3 +2252,32 @@ select:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .sidebar nav button { transition:none!important; }
 }
+
+/* MOBILE RED ACCENTS — match the red AI core theme */
+@media (max-width: 650px) {
+  .sidebar nav button.active,
+  .sidebar nav button[aria-current="page"] {
+    color:#fff!important;
+    background:linear-gradient(135deg,rgba(239,68,68,.24),rgba(127,29,29,.18))!important;
+    border:1px solid rgba(248,83,83,.48)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 0 16px rgba(239,68,68,.12);
+  }
+  .sidebar nav button.active svg,
+  .sidebar nav button[aria-current="page"] svg { color:#ff6262!important; }
+  .sidebar nav button:hover { border-color:rgba(248,83,83,.42)!important; }
+  .topbar .eyebrow, .welcome-row .eyebrow { color:#ff6666!important; }
+  .stat-card, .panel { border-color:rgba(239,68,68,.16); }
+  .stat-card .stat-icon, .panel .accent-icon { color:#ff6262; }
+  .content a { color:#ff7777; }
+  .content button.primary, .content .primary-button, .auth-card button[type="submit"] {
+    background:linear-gradient(135deg,#ef4444,#991b1b)!important;
+    border-color:rgba(255,110,110,.45)!important;
+    color:#fff!important;
+    box-shadow:0 5px 18px rgba(220,38,38,.2);
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color:#ef4444!important;
+    box-shadow:0 0 0 3px rgba(239,68,68,.13)!important;
+    outline:none;
+  }
+}
