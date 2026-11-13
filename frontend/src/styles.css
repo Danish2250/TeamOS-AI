@@ -2541,3 +2541,107 @@ body { overflow-x:clip; }
 @media(prefers-reduced-motion:reduce) {
  *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; }
 }
+
+
+/* TEAM OS — cinematic black / red palette (color-only override).
+   Intentionally changes colors only: existing layout, spacing, components,
+   shapes, interactions, routes, and application logic remain untouched. */
+:root {
+  color-scheme: dark;
+  --team-bg: #090909;
+  --team-surface: #171717;
+  --team-surface-raised: #1e1e1e;
+  --team-red: #e53935;
+  --team-red-bright: #ff4b4b;
+  --team-text: #ffffff;
+  --team-muted: #a1a1aa;
+  --team-border: #303030;
+}
+html, body, #root, .app-shell, .main-area, .content {
+  background-color: var(--team-bg);
+  color: var(--team-text);
+}
+.sidebar, .topbar {
+  background-color: #0d0d0d;
+  border-color: var(--team-border);
+}
+.brand sup, .accent, .stat-icon, .text-btn, .link {
+  color: var(--team-red-bright);
+}
+.brand-mark, .project-icon {
+  background-color: var(--team-red);
+  color: var(--team-text);
+}
+.nav-label, .eyebrow, .muted, .user-card small,
+.stat-top, .project-item small, .task-info small {
+  color: var(--team-muted);
+}
+.sidebar nav button { color: #b8b8bd; }
+.sidebar nav button:hover, .sidebar nav button.active {
+  background-color: #291315;
+  color: var(--team-text);
+}
+.nav-badge, .count {
+  background-color: #351416;
+  color: #ff7777;
+}
+.avatar, .top-avatar, .ai-avatar, .message-avatar {
+  background-color: #321719;
+  color: #ff7777;
+}
+.search-box, .stat-card, .panel, .project-card,
+.task-edit-card, .task-filters, .auth-card,
+.generated-task, .message-content {
+  background-color: var(--team-surface);
+  border-color: var(--team-border);
+  color: var(--team-text);
+}
+.primary, button.primary, button[type="submit"] {
+  background-color: var(--team-red);
+  border-color: var(--team-red);
+  color: #fff;
+}
+.primary:hover, button.primary:hover, button[type="submit"]:hover {
+  background-color: var(--team-red-bright);
+  border-color: var(--team-red-bright);
+}
+.secondary, .icon-btn, .suggestion, .task-row select {
+  background-color: #202020;
+  border-color: #454545;
+  color: #eeeeee;
+}
+.panel input, .panel select, .panel textarea, .auth-card input,
+input, select, textarea {
+  background-color: #101010;
+  border-color: #3a3a3a;
+  color: #f5f5f5;
+}
+.panel input:focus, .panel select:focus, .panel textarea:focus,
+.auth-card input:focus, input:focus, select:focus, textarea:focus {
+  border-color: var(--team-red);
+}
+.task-row, .project-item, .user-card, .topbar {
+  border-color: var(--team-border);
+}
+.task-row:hover { background-color: #1b1112; }
+.priority.high, .danger { color: #ff7777; }
+.priority.medium { color: #e6bd70; }
+.priority.low, .online-dot { color: #8bc9a6; }
+.notice {
+  background-color: #251012;
+  border-color: #6d292d;
+  color: #ff9a9f;
+}
+.auth-wrap {
+  background-color: #090909;
+  color: var(--team-text);
+}
+.user-message .message-content {
+  background-color: #351416;
+  border-color: #713039;
+  color: var(--team-text);
+}
+.message-content b { color: #ff7777; }
+.suggestion:hover { background-color: #351416; }
+.project-progress-track { background-color: #303030; }
+.project-progress-fill { background-color: var(--team-red); }
