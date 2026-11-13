@@ -2,6 +2,10 @@
 
 A runnable MVP built with React + Vite, Node.js + Express, MongoDB Atlas, JWT, and Socket.IO.
 
+
+## Live Demo
+[Open TeamOS AI](https://team-os-ai.vercel.app/)
+
 ## Features
 - Register/login with JWT
 - Create and view projects
